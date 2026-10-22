@@ -126,9 +126,9 @@ app.post("/accident", async (req, res) => {
     // it with error 572006. A template name placed in "body" does not
     // invoke a predefined template.
     const message = await twilioClient.messages.create({
-      body: smsMessage,
-      from: TWILIO_FROM_NUMBER,
-      to: EMERGENCY_TO_NUMBER,
+    body: "sms_account_alerts",
+    from: TWILIO_FROM_NUMBER,
+    to: EMERGENCY_TO_NUMBER
     });
 
     console.log("Twilio accepted SMS. Message SID:", message.sid);
